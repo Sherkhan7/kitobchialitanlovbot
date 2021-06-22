@@ -1,0 +1,6 @@
+.idea/
+__pycache__/
+logs/
+config/config.py
+*.json
+pickle_*
