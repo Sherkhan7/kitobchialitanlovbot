@@ -23,9 +23,9 @@ def message_handler_callback(update: Update, context: CallbackContext):
         if re.search(f"^({get_id_btn})$", update.message.text):
             text = "ℹ Maxsus raqamni olish uchun avval kanalga a'zo bo'ling. \n\n" \
                    f"❗ Kanalga a'zo bo'lganingizda so'ng\n«✅ Raqamni olish» ni bosing.\n\n" \
-                   f"🅰 AD: 🤖 bot buyurtma qilish uchun @sobirsb ga murojaat qilishingiz mumkin !"
+                   f"🅰 AD: 🤖 TelegramBot yaratish, buyurtma qilish uchun @sobirsb ga murojaat qilishingiz mumkin !"
             inline_markup = InlineKeyboardMarkup([
-                [InlineKeyboardButton("📢 Kanalga a'zo bo'lish ", 'https://t.me/my_public_channel_0')],
+                [InlineKeyboardButton("📢 Kanalga a'zo bo'lish ", 'https://t.me/Kitobchi_ali')],
                 [InlineKeyboardButton("✅ Raqamni olish", callback_data='get_id')]
             ])
             delete_message_by_message_id(context, user)
