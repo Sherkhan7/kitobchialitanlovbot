@@ -4,6 +4,7 @@ from telegram.ext import CallbackQueryHandler, CallbackContext
 from DB import *
 from globalvariables import *
 from config import *
+from helpers import wrap_tags
 
 
 def inline_keyboards_handler_callback(update: Update, context: CallbackContext):
@@ -19,6 +20,8 @@ def inline_keyboards_handler_callback(update: Update, context: CallbackContext):
         alert_text = not_member_alert_text if chat_member.status != 'member' else id_text
         try:
             callback_query.answer(alert_text, show_alert=True)
+            if alert_text == id_text:
+                callback_query.message.reply_text(wrap_tags(id_text))
         except TelegramError:
             pass
         return
